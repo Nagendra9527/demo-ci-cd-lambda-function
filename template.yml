@@ -8,7 +8,7 @@ Resources:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain    
     Properties:
-      BucketName: !Sub "demo-ci-cd-source-bucket"
+      BucketName: !Sub "demo-ci-cd-source-bucket-11"
   TargetTopic:
     Type: AWS::SNS::Topic
     Properties:
@@ -36,7 +36,7 @@ Resources:
         - LambdaInvokePolicy:
             FunctionName: demo-ci-cd-lambda-function
         - S3ReadPolicy:
-            BucketName: !Sub "demo-ci-cd-source-bucket"
+            BucketName: !Sub "demo-ci-cd-source-bucket-11"
         - SNSPublishMessagePolicy:
             TopicName: demo-ci-cd-target-topic
       Events:
