@@ -3,6 +3,7 @@ phases:
   build:
     commands:
       - ./gradlew clean buildZip
+      - sam init
       - sam package
         --template-file template.yml
         --output-template-file package.yml
